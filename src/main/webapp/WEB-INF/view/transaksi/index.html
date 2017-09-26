@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TRANSAKSI API</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!--CSS-->
+        <link rel="stylesheet" href="/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="/css/bootstrap.css"/>
+        <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/css/dataTables.bootstrap.css"/>
+        <link rel="stylesheet" href="/css/dataTables.bootstrap.min.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div class="container-fluid">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="page-header">
+                        <h3 class="alert alert-info">TRANSAKSI API</h3>
+                    </div>
+                    
+                    <button onclick="modaltransaksi()" type="button" class="btn btn-primary" >
+                        <span class="glyphicon glyphicon-plus-sign"></span>
+                        Tambah Transaksi
+                    </button>
+                    
+                    <div class="page-header">
+                        <table class="table table-hover table-striped" id="tabel-transaksi">
+                            <thead>
+                                <tr>
+                                    <th>idtransaksi</th>
+                                    <th>tanggal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>idtransaksi</th>
+                                    <th>tanggal</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--modal transaksi-->
+        <div class="modal fade" tabindex="-1" aria-hidden="true" id="modal-transaksi">
+            <div class="modal-dialog" role="dialog">
+                <div class="modal-content" role="document">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">
+                            <span aria-hidden="true">close</span>
+                        </button>
+                        <hr/>
+                        <h3>TRANSAKSI RESTFULL WEB SERVICE AJAX</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" id="add_transaksi">
+                            <input type="hidden" name="idtransaksi" id="idtransaksi"/>
+                            <input type="hidden" name="tanggal" id="tanggal"/>
+                            <table class="table table-striped table-hover" id="dynamic-field">
+                                <tr>
+                                    <td>
+                                        <select class="form-control" name="idproduct[]" id="idproduct">
+                                            <option value="">Pilih Product</option>
+                                            <option value="547de2c1-c6f8-42cf-b432-f657c701e45c">GIV</option>
+                                            <option value="ff7dba25-657c-42c2-8bb2-750724f0c309">Lifebuoy</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="number" id="jumlah" class="form-control" name="jumlah[]"/>
+                                    </td>
+                                    <td>
+                                        <button type="button" id="add-field" class="btn btn-success">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                            Tambah
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button onclick="insertTransaksi()" type="button" class="btn btn-primary" id="simpan" >
+                            <span class="glyphicon glyphicon-ok-circle"></span>
+                            Simpan
+                        </button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                            Batal
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--modal transaksi-->
+        
+        <!--JS-->
+        <script src="/js/jQuery.js"></script>
+        <script src="/js/jquery.dataTables.js"></script>
+        <script src="/js/jquery.dataTables.min.js"></script>
+        <script src="/js/bootbox.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/dataTables.bootstrap.js"></script>
+        <script src="/js/dataTables.bootstrap.min.js"></script>
+        <script src="/js/app/myapp.js"></script>
+    </body>
+</html>

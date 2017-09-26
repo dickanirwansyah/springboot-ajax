@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>YOUR CART</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!--css-->
+        <link href="/css/bootstrap-theme.css" rel="stylesheet"/>
+        <link href="/css/bootstrap.css" rel="stylesheet"/>
+        <link href="/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="/css/dataTables.bootstrap.css" rel="stylesheet"/>
+        <link href="/css/dataTables.bootstrap.min.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <form id="serialize_transaksi">
+        <div class="container">
+            <div class="container-fluid">
+                <div class="page-header">
+                    <h3 class="alert alert-info">YOUR CART API </h3>
+                </div>
+                <div class="page-header"> 
+                    <table class="table table-hover table-striped" id="tabel-cart">
+                        <thead>
+                            <tr>
+                                <th>no</th>
+                                <th>idproduct</th>
+                                <th>nama product</th>
+                                <th>jumlah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="cart : ${session.getcart}">
+                                <td th:text="${cartStat.count}"></td>
+                                <td th:text="${cart.product.idproduct}"></td>
+                                <td th:text="${cart.product.nama}"></td>
+                                <td th:text="${cart.jumlah}"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>no</th>
+                                <th>idproduct</th>
+                                <th>nama product</th>
+                                <th>jumlah</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <a href="http://localhost:8080/data/showproducts" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-shopping-cart">
+                        </span>
+                        Continue To Shopping !
+                    </a>
+                    <button type="button" id="insertAllTransaksi" class="btn btn-success">
+                        <span class="glyphicon glyphicon-ok-sign"></span>
+                        Saved Your Cart !
+                    </button>
+                </div>
+            </div>
+        </div>
+        </form>
+        
+        <!--js-->
+        <script src="/js/jQuery.js"></script>
+        <script src="/js/jquery.dataTables.js"></script>
+        <script src="/js/jquery.dataTables.min.js"></script>
+        <script src="/js/bootbox.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/dataTables.bootstrap.js"></script>
+        <script src="/js/dataTables.bootstrap.min.js"></script>
+        <script src="/js/app/myapp.js"></script>
+    </body>
+</html>
